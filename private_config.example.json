@@ -1,0 +1,7 @@
+{
+  "server": "irc.chat.twitch.tv",
+  "port": 6667,
+  "nickname": "your_bot_account",
+  "token": "oauth:your_oauth_token_here",
+  "channel": "#streamer_name"
+}

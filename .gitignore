@@ -24,3 +24,4 @@ build/
 .idea/
 *.swp
 *.swo
+private_config.json
