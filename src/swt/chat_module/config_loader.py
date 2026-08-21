@@ -1,14 +1,17 @@
 import json
-from pathlib import Path
+import os
 
-CONFIG_PATH = Path(__file__).parent.parent.parent.parent / 'private_config.json'
+CONFIG_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+    'private_config.json'
+)
 
 def load_config():
-    if not CONFIG_PATH.exists():
+    if not os.path.exists(CONFIG_PATH):
         print(f"Error: {CONFIG_PATH} file not found.") # TODO: norm error log!
         exit(1)
     
-    with CONFIG_PATH.open('r', encoding='utf-8') as f:
+    with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 config = load_config()
